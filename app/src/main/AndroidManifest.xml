@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sensorapplication">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault"
+        android:usesCleartextTraffic="true">
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <activity
+            android:name=".GyroscopeYZ"
+            android:label="@string/title_activity_gyroscope_yz">
+
+        </activity>
+        <activity
+            android:name=".GyroscopeXZ"
+            android:label="@string/title_activity_gyroscope_xz">
+
+        </activity>
+        <activity
+            android:name=".GyroscopeXY"
+            android:label="@string/title_activity_gyroscope_xy">
+
+        </activity>
+        <activity
+            android:name=".AccelerometerYZ"
+            android:label="@string/title_activity_accelerometer_yz" />
+        <activity
+            android:name=".AccelerometerXZ"
+            android:label="@string/title_activity_accelerometer_xz" />
+        <activity
+            android:name=".AccelerometerXY"
+            android:label="@string/title_activity_accelerometer_xy" />
+        <activity
+            android:name=".HeartRate"
+            android:label="@string/title_activity_heart_rate" />
+        <activity
+            android:name=".StepDetector"
+            android:label="@string/title_activity_step_detector" />
+        <activity
+            android:name=".Sensing"
+            android:label="@string/title_activity_sensing">
+
+        </activity>
+        <activity
+            android:name=".GyroscopeZ"
+            android:label="@string/title_activity_gyroscope_z" />
+        <activity
+            android:name=".GyroscopeY"
+            android:label="@string/title_activity_gyroscope_y" />
+        <activity
+            android:name=".GyroscopeX"
+            android:label="@string/title_activity_gyroscope_x" />
+        <activity
+            android:name=".Choose_A_Gyroscope"
+            android:label="@string/title_activity_choose__a__gyroscope" />
+        <activity
+            android:name=".AccelerometerZ"
+            android:label="@string/title_activity_accelerometer_z" />
+        <activity
+            android:name=".AccelerometerY"
+            android:label="@string/title_activity_accelerometer_y" />
+        <activity
+            android:name=".Choose_A_Accelerometer"
+            android:label="@string/title_activity_choose__a__accelerometer" />
+        <activity
+            android:name=".AccelerometerX"
+            android:label="@string/title_activity_accelerometer_x" />
+        <activity
+            android:name=".Gyroscope"
+            android:label="@string/title_activity_gyroscope" />
+        <activity
+            android:name=".Accelerometer"
+            android:label="@string/title_activity_accelerometer" />
+        <activity
+            android:name=".Choose_A_Sensor"
+            android:label="@string/title_activity_choose__a__sensor" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
