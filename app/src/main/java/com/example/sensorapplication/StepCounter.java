@@ -1,5 +1,6 @@
 package com.example.sensorapplication;
 
+
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -21,7 +22,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class StepDetector extends WearableActivity {
+public class StepCounter extends WearableActivity {
 
     private TextView mTextView;
     private SensorManager sensorManager;
@@ -36,6 +37,7 @@ public class StepDetector extends WearableActivity {
     private ToggleButton mToggle;
     private JavaGetRequest mTask;
     int on_off = 0;
+    int start = 0;
 
 
 
@@ -45,7 +47,7 @@ public class StepDetector extends WearableActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step_detector);
+        setContentView(R.layout.activity_step_counter);
 
         mTextView = (TextView) findViewById(R.id.text);
         resetBtn = (Button) findViewById(R.id.reset);
@@ -65,7 +67,7 @@ public class StepDetector extends WearableActivity {
         resetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(StepDetector.this,StepDetector.class);
+                Intent intent=new Intent(StepCounter.this,StepCounter.class);
                 startActivity(intent);
                 finish();
             }
@@ -127,7 +129,7 @@ public class StepDetector extends WearableActivity {
         if (sensorManager == null)
             sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
-        sensors = sensorManager.getSensorList(Sensor.TYPE_STEP_COUNTER);
+        sensors = sensorManager.getSensorList(Sensor.TYPE_STEP_DETECTOR);
         if (sensors.size() > 0)
             sensor = sensors.get(0);
 
@@ -142,16 +144,17 @@ public class StepDetector extends WearableActivity {
             public void onSensorChanged(SensorEvent event) {
                 //just set the values to a textview so they can be displayed.
 
-                if (event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) {
-                    float k = event.values[0];
-                    String nums = df.format(k);
-                    mTextView.setText(nums);
+                if (event.sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
 
-                    String url_value_string = Float.toString(k)+"/"+"0/0";
+                    ++start;
+
+                    mTextView.setText(Integer.toString(start));
+
+                    String url_value_string = Integer.toString(start)+"/"+"0/0";
                     final String[] output = new String[2];
                     long unixTime = System.currentTimeMillis() / 1000L;
                     String time = Long.toString(unixTime);
-                    output[0] = "http://165.124.181.163:5000/store/"+time+"/"+macAddress+"/"+"HeartRate/"+url_value_string;
+                    output[0] = "http://165.124.181.163:5000/store/"+time+"/"+macAddress+"/"+"StepDetector/"+url_value_string;
 
                     if(on_off ==1) {
                         new JavaGetRequest().execute(output);

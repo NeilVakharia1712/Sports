@@ -118,4 +118,5 @@
     <string name="title_activity_gyroscope_xy">GyroscopeXY</string>
     <string name="title_activity_gyroscope_xz">GyroscopeXZ</string>
     <string name="title_activity_gyroscope_yz">GyroscopeYZ</string>
+    <string name="title_activity_step_counter">StepCounter</string>
 </resources>

@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/dark_grey"
     android:padding="@dimen/box_inset_layout_padding"
-    tools:context=".StepDetector"
+    tools:context=".StepCounter"
     tools:deviceIds="wear">
 
     <FrameLayout
@@ -19,7 +19,7 @@
             android:id="@+id/text"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:text="Sensing Heart Rate"
+            android:text="0"
             android:textAlignment="center"
             android:textSize="30dp"/>
 
@@ -31,7 +31,7 @@
             android:layout_marginLeft="15dp"
             android:layout_height="wrap_content"
             android:text="reset"
-            android:layout_marginTop="50dp"/>
+            android:layout_marginTop="40dp"/>
 
         <ToggleButton
             android:id="@+id/toggleButton"

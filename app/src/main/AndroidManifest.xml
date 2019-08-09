@@ -31,20 +31,17 @@
             android:value="true" />
 
         <activity
+            android:name=".StepCounter"
+            android:label="@string/title_activity_step_counter"></activity>
+        <activity
             android:name=".GyroscopeYZ"
-            android:label="@string/title_activity_gyroscope_yz">
-
-        </activity>
+            android:label="@string/title_activity_gyroscope_yz"></activity>
         <activity
             android:name=".GyroscopeXZ"
-            android:label="@string/title_activity_gyroscope_xz">
-
-        </activity>
+            android:label="@string/title_activity_gyroscope_xz"></activity>
         <activity
             android:name=".GyroscopeXY"
-            android:label="@string/title_activity_gyroscope_xy">
-
-        </activity>
+            android:label="@string/title_activity_gyroscope_xy"></activity>
         <activity
             android:name=".AccelerometerYZ"
             android:label="@string/title_activity_accelerometer_yz" />
@@ -58,13 +55,8 @@
             android:name=".HeartRate"
             android:label="@string/title_activity_heart_rate" />
         <activity
-            android:name=".StepDetector"
-            android:label="@string/title_activity_step_detector" />
-        <activity
             android:name=".Sensing"
-            android:label="@string/title_activity_sensing">
-
-        </activity>
+            android:label="@string/title_activity_sensing"></activity>
         <activity
             android:name=".GyroscopeZ"
             android:label="@string/title_activity_gyroscope_z" />

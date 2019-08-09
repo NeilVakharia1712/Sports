@@ -52,7 +52,7 @@ public class Sensing extends WearableActivity {
         mBtn_step.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Sensing.this , StepDetector.class));
+                startActivity(new Intent(Sensing.this , StepCounter.class));
             }
         });
 
